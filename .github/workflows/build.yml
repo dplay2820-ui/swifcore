@@ -18,11 +18,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Dar permisos de ejecucion a gradlew
-        run: chmod +x ./gradlew || true
-
-      - name: Compilar con Gradle
+      - name: Instalar Gradle 8.1.1
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.1.1'
 
       - name: Ejecutar build
         run: gradle build --no-daemon
